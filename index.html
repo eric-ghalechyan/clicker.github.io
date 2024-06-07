@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>First Duck Clicker Bot</title>
+    <title>Clicker Bot</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>First Duck Clicker Bot</h1>
+        <h1>Black and White Clicker</h1>
         <div class="balance">
             <h2>Balance: <span id="balance">0</span></h2>
         </div>
@@ -16,6 +16,17 @@
             <h2>Progress: <span id="progress">0</span>/1000</h2>
         </div>
         <img id="clickImage" src="duck.png" alt="Click Me!" />
+        <div class="referral">
+            <h2>Your Referral Link:</h2>
+            <input type="text" id="referralLink" readonly>
+            <button id="copyButton">Copy Link</button>
+        </div>
+        <div class="tasks">
+            <h2>Tasks</h2>
+            <ul id="taskList">
+                <!-- Tasks will be dynamically inserted here -->
+            </ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
