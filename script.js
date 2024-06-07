@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const balanceElement = document.getElementById("balance");
     const progressElement = document.getElementById("progress");
-    const clickButton = document.getElementById("clickButton");
+    const clickImage = document.getElementById("clickImage");
 
     // Load initial data from localStorage
     let balance = parseFloat(localStorage.getItem("balance")) || 0;
@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
     balanceElement.textContent = balance.toFixed(1);
     progressElement.textContent = progress;
 
-    // Click button event
-    clickButton.addEventListener("click", function() {
+    // Click image event
+    clickImage.addEventListener("click", function() {
         // Update balance and progress
         balance += 10;
         progress += 1;
@@ -37,4 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
             progressElement.textContent = progress;
         }
     });
+
+    // Prevent double-tap to zoom
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, { passive: false });
 });
